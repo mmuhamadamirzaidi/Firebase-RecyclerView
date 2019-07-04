@@ -1,16 +1,17 @@
 package com.mmuhamadamirzaidi.firebaserecyclerview.Model;
 
 public class Category {
-    String Name, Image, Description, Key;
+    String Name, Image, Description, Key, IconImage;
 
     public Category() {
     }
 
-    public Category(String name, String image, String description, String key) {
+    public Category(String name, String image, String description, String key, String iconImage) {
         Name = name;
         Image = image;
         Description = description;
         Key = key;
+        IconImage = iconImage;
     }
 
     public String getName() {
@@ -43,6 +44,14 @@ public class Category {
 
     public void setKey(String key) {
         Key = key;
+    }
+
+    public String getIconImage() {
+        return IconImage;
+    }
+
+    public void setIconImage(String iconImage) {
+        IconImage = iconImage;
     }
 }
 

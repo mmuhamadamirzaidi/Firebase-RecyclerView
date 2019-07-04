@@ -38,16 +38,18 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.MyView
     public void onBindViewHolder(@NonNull final MyViewHolder myViewHolder, int i) {
 
 
-//        myViewHolder.img_user.setAnimation(AnimationUtils.loadAnimation(context,R.anim.fade_transition_animation));
+        myViewHolder.IconImage.setAnimation(AnimationUtils.loadAnimation(context,R.anim.fade_transition_animation));
         myViewHolder.Container.setAnimation(AnimationUtils.loadAnimation(context, R.anim.fade_scale_animation));
 
         myViewHolder.Name.setText(category.get(i).getName());
         myViewHolder.Description.setText(category.get(i).getDescription());
+        Picasso.get().load(category.get(i).getIconImage()).into(myViewHolder.IconImage);
         Picasso.get().load(category.get(i).getImage()).into(myViewHolder.Image);
 
         final String getNameCategory = category.get(i).getName();
         final String getDescriptionCategory = category.get(i).getDescription();
-//        final String getImageCategory = category.get(i).getImage();
+        final String getImageCategory = category.get(i).getImage();
+        final String getIconImageCategory = category.get(i).getIconImage();
         final String getKeyCategory = category.get(i).getKey();
 
         myViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
@@ -72,16 +74,18 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.MyView
     class MyViewHolder extends RecyclerView.ViewHolder {
 
         TextView Name, Description, Key;
-        ImageView Image;
+        ImageView Image, IconImage;
         RelativeLayout Container;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
-            Name = (TextView) itemView.findViewById(R.id.rTitleTv);
-            Description = (TextView) itemView.findViewById(R.id.rDescriptionTv);
+
+            Name = (TextView) itemView.findViewById(R.id.categoryName);
+            Description = (TextView) itemView.findViewById(R.id.categoryDescription);
 
             Container = itemView.findViewById(R.id.container);
-            Image = itemView.findViewById(R.id.rImageView);
+            IconImage = itemView.findViewById(R.id.categoryIconImage);
+            Image = itemView.findViewById(R.id.categoryImage);
         }
     }
 }
