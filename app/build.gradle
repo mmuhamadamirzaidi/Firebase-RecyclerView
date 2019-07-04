@@ -32,9 +32,7 @@ dependencies {
 
     //Firebase Library
     implementation 'com.google.firebase:firebase-database:11.8.0'
-    implementation 'com.firebaseui:firebase-ui-database:0.4.0'
 
     //Others Library
     implementation 'com.squareup.picasso:picasso:2.71828'
-
 }

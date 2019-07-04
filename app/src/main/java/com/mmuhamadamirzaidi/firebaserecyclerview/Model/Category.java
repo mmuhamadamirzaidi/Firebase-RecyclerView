@@ -1,9 +1,16 @@
 package com.mmuhamadamirzaidi.firebaserecyclerview.Model;
 
 public class Category {
-    String Name, Image, Description;
+    String Name, Image, Description, Key;
 
     public Category() {
+    }
+
+    public Category(String name, String image, String description, String key) {
+        Name = name;
+        Image = image;
+        Description = description;
+        Key = key;
     }
 
     public String getName() {
@@ -28,6 +35,14 @@ public class Category {
 
     public void setDescription(String description) {
         Description = description;
+    }
+
+    public String getKey() {
+        return Key;
+    }
+
+    public void setKey(String key) {
+        Key = key;
     }
 }
 
