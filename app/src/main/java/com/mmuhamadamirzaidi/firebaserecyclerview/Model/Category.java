@@ -1,7 +1,7 @@
 package com.mmuhamadamirzaidi.firebaserecyclerview.Model;
 
 public class Category {
-    String Name, Image, Description, Key, IconImage;
+    private String Name, Image, Description, Key, IconImage;
 
     public Category() {
     }
